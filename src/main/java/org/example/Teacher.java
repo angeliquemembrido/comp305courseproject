@@ -14,6 +14,18 @@ public class Teacher {
         this.subject = subject;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getSubject() {
+        return this.subject;
+    }
+
 
     public static boolean AddNewTeacher(Teacher teacher) {
         if (teacher == null || teacher.firstName == null || teacher.lastName == null || teacher.subject == null) {
