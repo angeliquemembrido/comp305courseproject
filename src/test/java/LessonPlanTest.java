@@ -10,7 +10,6 @@ public class LessonPlanTest {
         boolean result = LessonPlan.uploadLessonPlan(plan);
         assertTrue(result);
     }
-
     @Test
     public void testInvalidUploadParameters_NullSubject() {
         LessonPlan plan = new LessonPlan(null, "Object-Oriented Programming", "Intro to Test-Driven Development");
