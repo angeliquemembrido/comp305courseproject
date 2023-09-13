@@ -24,6 +24,10 @@ public class Teacher {
         }
         return teachers.add(teacher);
     }
+
+    public static boolean removeTeacher(String firstName, String lastName) {
+        return teachers.removeIf(teacher -> teacher.firstName.equals(firstName) && teacher.lastName.equals(lastName));
+    }
 }
 
 

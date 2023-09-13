@@ -23,4 +23,12 @@ public class TeacherTest {
         boolean result = Teacher.AddNewTeacher(newTeacher);
         assertFalse(result);
     }
+
+    @Test
+    public void testRemoveTeacher() {
+        Teacher newTeacher = new Teacher("Jennifer", "Olsen", "Computer Science");
+        Teacher.AddNewTeacher(newTeacher);
+        boolean result = Teacher.removeTeacher("Jennifer", "Olsen");
+        assertTrue(result);
+    }
 }
