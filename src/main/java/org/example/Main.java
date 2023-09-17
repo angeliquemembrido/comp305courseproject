@@ -36,10 +36,10 @@ public class Main {
                         System.out.println("No Lesson Plans found.");
                     } else {
                         System.out.println("List of Lesson Plans:");
+                        System.out.format("%-20s %-20s %-20s%n", "Subject", "Title", "Description");
+                        System.out.format("%-20s %-20s %-20s%n", "-------", "-----", "-----------");
                         for (LessonPlan lp : lessonPlans) {
-                            System.out.println("Subject: " + lp.getSubject());
-                            System.out.println("Title: " + lp.getTitle());
-                            System.out.println("Description: " + lp.getDescription());
+                            System.out.format("%-20s %-20s %-20s%n", lp.getSubject(), lp.getTitle(), lp.getDescription());
                         }
                     }
                     break;
