@@ -31,6 +31,7 @@ public class Admin {
         return false;
     }
 
+
     // View all lesson plans
     public List<LessonPlan> viewAllLessonPlans() {
         return new ArrayList<>(lessonPlans);

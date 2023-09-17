@@ -27,6 +27,13 @@ public class AdminTest {
     }
 
     @Test
+    public void testUploadLessonPlan() {
+        Admin admin = new Admin();
+        boolean result = admin.uploadLessonPlan("Math", "Algebra Basics", "Introduction to Algebra");
+        assertTrue(result);
+    }
+
+    @Test
     public void testViewAllLessonPlans() {
         Admin admin = new Admin();
         assertNotNull(admin.viewAllLessonPlans());
