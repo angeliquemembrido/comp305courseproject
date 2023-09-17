@@ -11,7 +11,9 @@ public class Main {
             System.out.println("1. Upload Lesson Plan");
             System.out.println("2. Remove Lesson Plan");
             System.out.println("3. View All Lesson Plans");
-            System.out.println("4. Exit");
+            System.out.println("4. Add Teacher");
+            System.out.println("5. Remove Teacher");
+            System.out.println("6. Exit");
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
@@ -57,6 +59,28 @@ public class Main {
                     }
                     break;
                 case 4:
+                    System.out.print("Enter teacher's first name: ");
+                    String firstName = scanner.next();
+                    System.out.print("Enter teacher's last name: ");
+                    String lastName = scanner.next();
+                    System.out.print("Enter teacher subject: ");
+                    String teacherSubject = scanner.next();
+                    admin.addTeacher(firstName, lastName, teacherSubject);
+                    System.out.println("Teacher successfully added.");
+                    break;
+                case 5:
+                    System.out.print("Enter teacher's first name to remove: ");
+                    firstName = scanner.next();
+                    System.out.print("Enter teacher's last name to remove: ");
+                    lastName = scanner.next();
+                    removeStatus = admin.removeTeacher(firstName, lastName);
+                    if (removeStatus) {
+                        System.out.println("Teacher successfully removed.");
+                    } else {
+                        System.out.println("Teacher not found.");
+                    }
+                    break;
+                case 6:
                     System.out.println("Exiting...");
                     scanner.close();
                     System.exit(0);

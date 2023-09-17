@@ -27,6 +27,17 @@ public class AdminTest {
     }
 
     @Test
+    public void testViewAllTeachers() {
+        Admin admin = new Admin();
+        Teacher teacher1 = new Teacher("John", "Doe");
+        Teacher teacher2 = new Teacher("Jane", "Doe");
+        admin.addTeacher(teacher1);
+        admin.addTeacher(teacher2);
+        List<Teacher> teachers = admin.viewAllTeachers();
+        assertTrue(teachers.contains(teacher1) && teachers.contains(teacher2));
+    }
+
+    @Test
     public void testUploadLessonPlan() {
         Admin admin = new Admin();
         boolean result = admin.uploadLessonPlan("Math", "Algebra Basics", "Introduction to Algebra");
