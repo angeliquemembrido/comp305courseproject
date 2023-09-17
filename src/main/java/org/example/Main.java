@@ -9,8 +9,9 @@ public class Main {
         while (true) {
             System.out.println("Admin Menu:");
             System.out.println("1. Upload Lesson Plan");
-            System.out.println("2. View All Lesson Plans");
-            System.out.println("3. Exit");
+            System.out.println("2. Remove Lesson Plan");
+            System.out.println("3. View All Lesson Plans");
+            System.out.println("4. Exit");
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
@@ -31,6 +32,18 @@ public class Main {
                     }
                     break;
                 case 2:
+                    System.out.print("Enter the subject of the lesson plan to remove: ");
+                    String removeSubject = scanner.next();
+                    System.out.print("Enter the title of the lesson plan to remove: ");
+                    String removeTitle = scanner.next();
+                    boolean removeStatus = admin.removeLessonPlan(removeSubject, removeTitle);
+                    if (removeStatus) {
+                        System.out.println("Lesson Plan successfully removed.");
+                    } else {
+                        System.out.println("Failed to remove Lesson Plan.");
+                    }
+                    break;
+                case 3:
                     List<LessonPlan> lessonPlans = admin.viewAllLessonPlans();
                     if (lessonPlans.isEmpty()) {
                         System.out.println("No Lesson Plans found.");
@@ -43,7 +56,7 @@ public class Main {
                         }
                     }
                     break;
-                case 3:
+                case 4:
                     System.out.println("Exiting...");
                     scanner.close();
                     System.exit(0);
