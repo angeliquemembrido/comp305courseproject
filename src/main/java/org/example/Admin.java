@@ -31,6 +31,12 @@ public class Admin {
         return false;
     }
 
+    // Add a new lesson plan
+    public boolean uploadLessonPlan(String subject, String title, String description) {
+        LessonPlan newLessonPlan = new LessonPlan(subject, title, description);
+        lessonPlans.add(newLessonPlan);
+        return true;
+    }
 
     // View all lesson plans
     public List<LessonPlan> viewAllLessonPlans() {

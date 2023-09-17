@@ -42,6 +42,7 @@ public class AdminTest {
     @Test
     public void testRemoveLessonPlan() {
         Admin admin = new Admin();
+        admin.uploadLessonPlan("Computer Science", "Object-Oriented Programming", "An introduction to OOP");
         boolean result = admin.removeLessonPlan("Computer Science", "Object-Oriented Programming");
         assertTrue(result);
     }
