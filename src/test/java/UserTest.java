@@ -28,6 +28,18 @@ public class UserTest {
         assertTrue(result);
     }
 
+    public void testAddNewTeacher_Empty() {
+        User user = new User("John", "Doe");
+        boolean result = user.addTeacher("", "", "");
+        assertFalse(result);
+    }
+
+    public void testAddNewTeacher_Null() {
+        User user = new User("John", "Doe");
+        boolean result = user.addTeacher(null, null, null);
+        assertFalse(result);
+    }
+
     @Test
     public void testViewAllTeachers() {
         User user = new User("John", "Doe");

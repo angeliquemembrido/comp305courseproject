@@ -4,7 +4,7 @@ import java.util.List;
 public class User {
     private String firstName;
     private String lastName;
-    private List<LessonPlan> lessonPlans;
+    protected List<LessonPlan> lessonPlans;
     private List<Teacher> teachers;
 
     public User(String firstName, String lastName) {
@@ -25,6 +25,11 @@ public class User {
     public List<LessonPlan> viewLessonPlans() {
         return new ArrayList<>(lessonPlans);
     }
+
+    public List<Teacher> getTeachers() {
+        return teachers;
+    }
+
 
     public boolean addTeacher(String firstName, String lastName, String subject) {
         if (firstName != null && lastName != null && subject != null) {
