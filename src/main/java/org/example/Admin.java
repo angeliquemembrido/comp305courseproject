@@ -31,7 +31,7 @@ public class Admin {
     }
 
     public List<Teacher> viewAllTeachers() {
-        return teachers;
+        return new ArrayList<>(teachers);
     }
 
     // Add a new lesson plan
