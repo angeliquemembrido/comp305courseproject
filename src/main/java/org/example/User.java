@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private String firstName;
-    private String lastName;
+    private final String firstName;
+    private final String lastName;
     protected List<LessonPlan> lessonPlans;
     protected List<Teacher> teachers;
 
@@ -46,6 +46,13 @@ public class User {
     public List<Teacher> viewAllTeachers() {
         return new ArrayList<>(teachers);
     }
+
+    public boolean uploadLessonPlan(String subject, String title, String description) {
+        LessonPlan newLessonPlan = new LessonPlan(subject, title, description);
+        return lessonPlans.add(newLessonPlan);
+    }
+
+
 
 }
 

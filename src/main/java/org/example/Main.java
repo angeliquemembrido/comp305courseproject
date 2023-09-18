@@ -1,9 +1,12 @@
+package org.example;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
-        Admin admin = new Admin("Angelique", "Membrido");
+        User user = new User("Angelique", "Membrido");
+        Admin admin = new Admin("Jennifer", "Olsen");
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -26,7 +29,7 @@ public class Main {
                     String title = scanner.next();
                     System.out.print("Enter description: ");
                     String description = scanner.next();
-                    boolean uploadStatus = admin.uploadLessonPlan(subject, title, description);
+                    boolean uploadStatus = user.uploadLessonPlan(subject, title, description);
                     if (uploadStatus) {
                         System.out.println("Lesson Plan successfully uploaded.");
                     } else {
@@ -46,7 +49,7 @@ public class Main {
                     }
                     break;
                 case 3:
-                    List<LessonPlan> lessonPlans = admin.viewAllLessonPlans();
+                    List<LessonPlan> lessonPlans = user.viewLessonPlans();
                     if (lessonPlans.isEmpty()) {
                         System.out.println("No Lesson Plans found.");
                     } else {

@@ -73,5 +73,61 @@ public class UserTest {
         assertEquals("Olsen", user.viewAllTeachers().get(0).getLastName());
         assertEquals("Math", user.viewAllTeachers().get(0).getSubject());
     }
+    @Test
+    public void testUploadLessonPlan() {
+        User user = new User("Angelique", "Membrido");
+        String subject = "Computer Science";
+        String title = "Object-Oriented Programming";
+        String description = "Intro to Test-Driven Development";
+
+        boolean result = user.uploadLessonPlan(subject, title, description);
+
+        assertTrue(result);
+    }
+
+    @Test
+    public void testInvalidUploadParameters_NullSubject() {
+        User user = new User("Angelique", "Membrido");
+        boolean result = user.uploadLessonPlan(null, "Object-Oriented Programming", "Intro to Test-Driven Development");
+        assertFalse(result);
+    }
+
+    @Test
+    public void testInvalidUploadParameters_EmptySubject() {
+        User user = new User("Angelique", "Membrido");
+        boolean result = user.uploadLessonPlan("", "Object-Oriented Programming", "Intro to Test-Driven Development");
+        assertFalse(result);
+    }
+
+    @Test
+    public void testInvalidUploadParameters_NullTitle() {
+        User user = new User("Angelique", "Membrido");
+        boolean result = user.uploadLessonPlan("Computer", null, "Intro to Test-Driven Development");
+        assertFalse(result);
+    }
+
+    @Test
+    public void testInvalidUploadParameters_EmptyTitle() {
+        User user = new User("Angelique", "Membrido");
+        boolean result = user.uploadLessonPlan("Computer", "", "Intro to Test-Driven Development");
+        assertFalse(result);
+    }
+
+    @Test
+    public void testInvalidUploadParameters_NullDescription() {
+        User user = new User("Angelique", "Membrido");
+        boolean result = user.uploadLessonPlan("Computer", "Object-Oriented Programming", null);
+        assertFalse(result);
+    }
+
+    @Test
+    public void testInvalidUploadParameters_EmptyDescription() {
+        User user = new User("Angelique", "Membrido");
+        boolean result = user.uploadLessonPlan("Computer", "Object-Oriented Programming", "");
+        assertFalse(result);
+    }
+
+
+
 }
 

@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 public class AdminTest {
 
 
+    @Test
+    public void testUploadLessonPlan() {
+        Admin admin = new Admin("Angelique", "Membrido");
+        assertTrue(admin.uploadLessonPlan("Math", "Algebra Basics", "Introduction to Algebra"));
+    }
 
     @Test
     public void testRemoveTeacher() {

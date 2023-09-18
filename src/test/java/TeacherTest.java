@@ -21,8 +21,8 @@ public class TeacherTest {
     @Test
     public void testInvalidSubject() {
         Teacher teacher = new Teacher("Jennifer", "Olsen", "Computer Science");
-        boolean result = teacher.setSubject("");
-        assertFalse(result);
+        assertThrows(IllegalArgumentException.class, () -> teacher.setSubject(""));
+        assertThrows(IllegalArgumentException.class, () -> teacher.setSubject(null));
     }
 
 }
