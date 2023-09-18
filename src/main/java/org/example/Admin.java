@@ -14,8 +14,7 @@ public class Admin {
     public boolean addTeacher(String firstName, String lastName, String subject) {
         if (firstName != null && lastName != null && subject != null) {
             Teacher newTeacher = new Teacher(firstName, lastName, subject);
-            teachers.add(newTeacher);
-            return true;
+            return teachers.add(newTeacher);
         }
         return false;
     }
@@ -29,6 +28,10 @@ public class Admin {
             }
         }
         return false;
+    }
+
+    public List<Teacher> viewAllTeachers() {
+        return teachers;
     }
 
     // Add a new lesson plan

@@ -1,5 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import java.util.List;
 
 public class AdminTest {
 
@@ -29,12 +30,26 @@ public class AdminTest {
     @Test
     public void testViewAllTeachers() {
         Admin admin = new Admin();
-        Teacher teacher1 = new Teacher("John", "Doe");
-        Teacher teacher2 = new Teacher("Jane", "Doe");
-        admin.addTeacher(teacher1);
-        admin.addTeacher(teacher2);
+
+        // Add teachers
+        admin.addTeacher("John", "Doe", "Math");
+        admin.addTeacher("Jane", "Doe", "English");
+
         List<Teacher> teachers = admin.viewAllTeachers();
-        assertTrue(teachers.contains(teacher1) && teachers.contains(teacher2));
+
+        boolean teacher1Found = false;
+        boolean teacher2Found = false;
+
+        for (Teacher teacher : teachers) {
+            if (teacher.getFirstName().equals("John") && teacher.getLastName().equals("Doe") && teacher.getSubject().equals("Math")) {
+                teacher1Found = true;
+            }
+            if (teacher.getFirstName().equals("Jane") && teacher.getLastName().equals("Doe") && teacher.getSubject().equals("English")) {
+                teacher2Found = true;
+            }
+        }
+        assertTrue(teacher1Found);
+        assertTrue(teacher2Found);
     }
 
     @Test
@@ -47,7 +62,16 @@ public class AdminTest {
     @Test
     public void testViewAllLessonPlans() {
         Admin admin = new Admin();
-        assertNotNull(admin.viewAllLessonPlans());
+        LessonPlan lp1 = new LessonPlan("Math", "Algebra", "Introduction to Algebra");
+        LessonPlan lp2 = new LessonPlan("Science", "Physics", "Newton's Laws");
+
+        admin.uploadLessonPlan(lp1.getSubject(), lp1.getTitle(), lp1.getDescription());
+        admin.uploadLessonPlan(lp2.getSubject(), lp2.getTitle(), lp2.getDescription());
+
+        List<LessonPlan> lessonPlans = admin.viewAllLessonPlans();
+
+        assertNotNull(lessonPlans);
+        assertTrue(lessonPlans.contains(lp1) && lessonPlans.contains(lp2));
     }
 
     @Test
