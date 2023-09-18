@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class LessonPlan {
     private String subject;
@@ -28,29 +27,18 @@ public class LessonPlan {
         return description;
     }
 
-    public boolean upload(String subject, String title, String description) {
-        if (subject == null || subject.isEmpty() || title == null || title.isEmpty() || description == null || description.isEmpty()) {
+    // Uploads a new lesson plan to the static list.
+    public static boolean uploadLessonPlan(LessonPlan plan) {
+        if (plan == null || plan.subject == null || plan.title == null || plan.description == null ||
+                plan.subject.isEmpty() || plan.title.isEmpty() || plan.description.isEmpty()) {
             return false;
         }
 
         // Check for duplicates
         for (LessonPlan existingPlan : lessonPlans) {
-            if (existingPlan.getSubject().equals(subject) && existingPlan.getTitle().equals(title) && existingPlan.getDescription().equals(description)) {
+            if (existingPlan.getSubject().equals(plan.getSubject()) && existingPlan.getTitle().equals(plan.getTitle()) && existingPlan.getDescription().equals(plan.getDescription())) {
                 return false; // Duplicate found
             }
-        }
-
-        this.subject = subject;
-        this.title = title;
-        this.description = description;
-        lessonPlans.add(this);
-        return true;
-    }
-
-    // Uploads a new lesson plan to the static list.
-    public static boolean uploadLessonPlan(LessonPlan plan) {
-        if (plan == null || plan.getSubject() == null || plan.getTitle() == null || plan.getDescription() == null) {
-            return false;
         }
 
         lessonPlans.add(plan);

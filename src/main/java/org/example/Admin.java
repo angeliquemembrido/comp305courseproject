@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Admin {
+public class Admin extends User {
     private List<Teacher> teachers;
     private List<LessonPlan> lessonPlans;
 
-    public Admin() {
+    public Admin(String firstName, String lastName) {
+        super(firstName, lastName);
         this.teachers = new ArrayList<>();
         this.lessonPlans = new ArrayList<>();
     }
@@ -21,11 +22,16 @@ public class Admin {
 
     // Remove teacher by first name and last name
     public boolean removeTeacher(String firstName, String lastName) {
+        Teacher teacherToRemove = null;
         for (Teacher t : teachers) {
             if (t.getFirstName().equals(firstName) && t.getLastName().equals(lastName)) {
-                teachers.remove(t);
-                return true;
+                teacherToRemove = t;
+                break;
             }
+        }
+        if (teacherToRemove != null) {
+            teachers.remove(teacherToRemove);
+            return true;
         }
         return false;
     }
@@ -34,26 +40,21 @@ public class Admin {
         return new ArrayList<>(teachers);
     }
 
-    // Add a new lesson plan
-    public boolean uploadLessonPlan(String subject, String title, String description) {
-        LessonPlan newLessonPlan = new LessonPlan(subject, title, description);
-        lessonPlans.add(newLessonPlan);
-        return true;
-    }
-
-    // View all lesson plans
-    public List<LessonPlan> viewAllLessonPlans() {
-        return new ArrayList<>(lessonPlans);
-    }
-
-    // Remove a lesson plan
+    // Admin-specific method to remove a lesson plan
     public boolean removeLessonPlan(String subject, String title) {
+        LessonPlan lessonPlanToRemove = null;
         for (LessonPlan lp : lessonPlans) {
             if (lp.getSubject().equals(subject) && lp.getTitle().equals(title)) {
-                lessonPlans.remove(lp);
-                return true;
+                lessonPlanToRemove = lp;
+                break;
             }
+        }
+        if (lessonPlanToRemove != null) {
+            lessonPlans.remove(lessonPlanToRemove);
+            return true;
         }
         return false;
     }
 }
+
+

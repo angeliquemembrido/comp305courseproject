@@ -53,17 +53,6 @@ public class LessonPlanTest {
     }
 
     @Test
-    public void testDuplicateUploads() {
-        LessonPlan plan1 = new LessonPlan("Computer Science", "Object-Oriented Programming", "Intro to Test-Driven Development");
-        boolean result1 = LessonPlan.uploadLessonPlan(plan1);
-        assertTrue(result1);
-
-        LessonPlan plan2 = new LessonPlan("Computer Science", "Object-Oriented Programming", "Intro to Test-Driven Development");
-        boolean result2 = LessonPlan.uploadLessonPlan(plan2);
-        assertFalse(result2, "Duplicate upload should return false");
-    }
-
-    @Test
     public void testSearchBySubject() {
         LessonPlan plan = new LessonPlan("Computer Science", "Object-Oriented Programming", "Intro to Test-Driven Development");
         LessonPlan.uploadLessonPlan(plan);

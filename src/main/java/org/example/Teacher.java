@@ -1,46 +1,33 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Teacher {
-    private String firstName;
-    private String lastName;
+public class Teacher extends User {
     private String subject;
 
+    // Static list to hold all teachers.
     private static List<Teacher> teachers = new ArrayList<>();
 
     public Teacher(String firstName, String lastName, String subject) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        super(firstName, lastName);
         this.subject = subject;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     public String getSubject() {
         return this.subject;
     }
 
-
-    public static boolean AddNewTeacher(Teacher teacher) {
-        if (teacher == null || teacher.firstName == null || teacher.lastName == null || teacher.subject == null) {
+    public static boolean addNewTeacher(Teacher teacher) {
+        if (teacher == null || teacher.getFirstName() == null || teacher.getLastName() == null || teacher.getSubject() == null) {
             return false;
         }
-        if (teacher.firstName.isEmpty() || teacher.lastName.isEmpty() || teacher.subject.isEmpty()) {
+        if (teacher.getFirstName().isEmpty() || teacher.getLastName().isEmpty() || teacher.getSubject().isEmpty()) {
             return false;
         }
         return teachers.add(teacher);
     }
 
     public static boolean removeTeacher(String firstName, String lastName) {
-        return teachers.removeIf(teacher -> teacher.firstName.equals(firstName) && teacher.lastName.equals(lastName));
+        return teachers.removeIf(teacher -> teacher.getFirstName().equals(firstName) && teacher.getLastName().equals(lastName));
     }
 }
-
-
 
