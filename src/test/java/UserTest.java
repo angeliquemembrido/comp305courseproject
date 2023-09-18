@@ -127,6 +127,22 @@ public class UserTest {
         assertFalse(result);
     }
 
+    @Test
+    public void testSearchBySubject() {
+
+        User user = new User("Angelique", "Membrido");
+        String subject = "Computer Science";
+        String title = "Object-Oriented Programming";
+        String description = "Intro to Test-Driven Development";
+        LessonPlan plan = new LessonPlan(subject, title, description);
+
+        user.uploadLessonPlan("Computer Science", "Object-Oriented Programming", "Intro to Test-Driven Development");
+
+        List<LessonPlan> results = user.searchBySubject("Computer Science");
+        assertNotNull(results);
+        assertFalse(results.isEmpty());
+    }
+
 
 
 }
