@@ -1,7 +1,10 @@
+import org.example.Teacher;
+import org.example.User;
+import org.example.LessonPlan;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import java.util.List;
-import java.util.ArrayList;
+
 
 public class UserTest {
 
@@ -33,12 +36,14 @@ public class UserTest {
         assertTrue(result);
     }
 
+    @Test
     public void testAddNewTeacher_Empty() {
         User user = new User("John", "Doe");
         boolean result = user.addTeacher("", "", "");
         assertFalse(result);
     }
 
+    @Test
     public void testAddNewTeacher_Null() {
         User user = new User("John", "Doe");
         assertFalse(user.addTeacher(null, "Olsen", "Math"));

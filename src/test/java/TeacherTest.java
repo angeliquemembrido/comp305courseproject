@@ -1,3 +1,4 @@
+import org.example.Teacher;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,6 +18,7 @@ public class TeacherTest {
         assertEquals("Science", teacher.getSubject());
     }
 
+    @Test
     public void testInvalidSubject() {
         Teacher teacher = new Teacher("Jennifer", "Olsen", "Computer Science");
         boolean result = teacher.setSubject("");

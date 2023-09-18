@@ -1,3 +1,4 @@
+package org.example;
 public class Teacher extends User {
     private String subject;
 
