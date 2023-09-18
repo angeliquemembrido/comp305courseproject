@@ -39,6 +39,29 @@ public class AdminTest {
         assertFalse(result, "Removing a non-existent lesson plan should return false");
     }
 
+    @Test
+    public void testAddTeacher_InvalidDetails() {
+        Admin admin = new Admin("Angelique", "Membrido");
+        assertFalse(admin.addTeacher("", "Olsen", "Computer Science"));
+        assertFalse(admin.addTeacher("Jennifer", "", "Computer Science"));
+        assertFalse(admin.addTeacher("Jennifer", "Olsen", ""));
+    }
+
+    @Test
+    public void testRemoveTeacher_Twice() {
+        Admin admin = new Admin("Angelique", "Membrido");
+        admin.addTeacher("Jennifer", "Olsen", "Computer Science");
+        assertTrue(admin.removeTeacher("Jennifer", "Olsen"));
+        assertFalse(admin.removeTeacher("Jennifer", "Olsen"));
+    }
+
+    @Test
+    public void testRemoveLessonPlan_Twice() {
+        Admin admin = new Admin("Angelique", "Membrido");
+        admin.uploadLessonPlan("Computer Science", "OOP", "Intro to OOP");
+        assertTrue(admin.removeLessonPlan("Computer Science", "OOP"));
+        assertFalse(admin.removeLessonPlan("Computer Science", "OOP"));
+    }
 
 }
 

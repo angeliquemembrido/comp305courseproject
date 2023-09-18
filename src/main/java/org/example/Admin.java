@@ -21,8 +21,13 @@ public class Admin extends User {
 
     @Override
     public boolean addTeacher(String firstName, String lastName, String subject) {
-        Teacher newTeacher = new Teacher(firstName, lastName, subject);
-        return getTeachers().add(newTeacher);
+        if (firstName != null && !firstName.isEmpty() &&
+                lastName != null && !lastName.isEmpty() &&
+                subject != null && !subject.isEmpty()) {
+            Teacher newTeacher = new Teacher(firstName, lastName, subject);
+            return teachers.add(newTeacher);
+        }
+        return false;
     }
 
     public boolean removeTeacher(String firstName, String lastName) {

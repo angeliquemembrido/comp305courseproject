@@ -12,14 +12,15 @@ public class TeacherTest {
     }
     @Test
     public void testSetSubject() {
-        Teacher teacher = new Teacher("John", "Doe", "Math");
+        Teacher teacher = new Teacher("Jennifer", "Olsen", "Computer Science");
         teacher.setSubject("Science");
         assertEquals("Science", teacher.getSubject());
     }
 
-
-
-
-
+    public void testInvalidSubject() {
+        Teacher teacher = new Teacher("Jennifer", "Olsen", "Computer Science");
+        boolean result = teacher.setSubject("");
+        assertFalse(result);
+    }
 
 }

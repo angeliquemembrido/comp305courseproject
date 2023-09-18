@@ -5,7 +5,7 @@ public class User {
     private String firstName;
     private String lastName;
     protected List<LessonPlan> lessonPlans;
-    private List<Teacher> teachers;
+    protected List<Teacher> teachers;
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;
@@ -32,7 +32,9 @@ public class User {
 
 
     public boolean addTeacher(String firstName, String lastName, String subject) {
-        if (firstName != null && lastName != null && subject != null) {
+        if (firstName != null && !firstName.isEmpty() &&
+                lastName != null && !lastName.isEmpty() &&
+                subject != null && !subject.isEmpty()) {
             Teacher newTeacher = new Teacher(firstName, lastName, subject);
             return teachers.add(newTeacher);
         }

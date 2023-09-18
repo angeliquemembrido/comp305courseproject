@@ -10,5 +10,13 @@ public class Teacher extends User {
         return subject;
     }
 
+    public boolean setSubject(String subject) {
+        if (subject == null || subject.isEmpty()) {
+            throw new IllegalArgumentException("Subject cannot be null or empty");
+        }
+        this.subject = subject;
+        return true;
+    }
+
 }
 
