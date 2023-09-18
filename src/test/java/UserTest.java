@@ -73,6 +73,7 @@ public class UserTest {
         assertEquals("Olsen", user.viewAllTeachers().get(0).getLastName());
         assertEquals("Math", user.viewAllTeachers().get(0).getSubject());
     }
+
     @Test
     public void testUploadLessonPlan() {
         User user = new User("Angelique", "Membrido");
@@ -131,17 +132,26 @@ public class UserTest {
     public void testSearchBySubject() {
 
         User user = new User("Angelique", "Membrido");
-        String subject = "Computer Science";
-        String title = "Object-Oriented Programming";
-        String description = "Intro to Test-Driven Development";
-        LessonPlan plan = new LessonPlan(subject, title, description);
-
         user.uploadLessonPlan("Computer Science", "Object-Oriented Programming", "Intro to Test-Driven Development");
 
         List<LessonPlan> results = user.searchBySubject("Computer Science");
         assertNotNull(results);
         assertFalse(results.isEmpty());
     }
+
+    @Test
+    public void testSearchByNonExistentSubject() {
+
+        User user = new User("Angelique", "Membrido");
+        user.uploadLessonPlan("Computer Science", "Object-Oriented Programming", "Intro to Test-Driven Development");
+
+        List<LessonPlan> results = user.searchBySubject("Art");
+        assertTrue(results.isEmpty());
+    }
+
+
+
+
 
 
 

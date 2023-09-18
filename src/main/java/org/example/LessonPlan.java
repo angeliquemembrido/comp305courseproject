@@ -28,18 +28,5 @@ public class LessonPlan {
         return description;
     }
 
-
-    // Deletes a lesson plan based on subject, title.
-    public static boolean deleteLessonPlan(String subject, String title) {
-        return lessonPlans.removeIf(plan -> plan.getSubject().equals(subject) && plan.getTitle().equals(title));}
-
-    // Searches for lesson plans by subject.
-    public static List<LessonPlan> searchBySubject(String subject) {
-        List<LessonPlan> foundPlans = new ArrayList<>();
-        for (LessonPlan plan : lessonPlans) {
-            if (plan.getSubject().equals(subject)) {
-                foundPlans.add(plan);}
-        }
-        return foundPlans;}
 }
 

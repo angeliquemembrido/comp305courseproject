@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class User {
     private final String firstName;
@@ -48,8 +49,24 @@ public class User {
     }
 
     public boolean uploadLessonPlan(String subject, String title, String description) {
+        if (subject == null || subject.isEmpty() ||
+                title == null || title.isEmpty() ||
+                description == null || description.isEmpty()) {
+            return false;
+        }
+
         LessonPlan newLessonPlan = new LessonPlan(subject, title, description);
         return lessonPlans.add(newLessonPlan);
+    }
+
+    public List<LessonPlan> searchBySubject(String subject) {
+        if (subject == null || subject.isEmpty()) {
+            return new ArrayList<>(); // return an empty list
+        }
+
+        return lessonPlans.stream()
+                .filter(lp -> subject.equals(lp.getSubject()))
+                .collect(Collectors.toList());
     }
 
 

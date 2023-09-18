@@ -8,11 +8,6 @@ public class LessonPlanTest {
 
 
 
-    @Test
-    public void testSearchByNonExistentSubject() {
-        List<LessonPlan> results = LessonPlan.searchBySubject("Art");
-        assertTrue(results.isEmpty());
-    }
 
 
 
