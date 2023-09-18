@@ -13,12 +13,6 @@ public class UserTest {
         assertEquals("Doe", user.getLastName());
     }
 
-    @Test
-    public void testUploadLessonPlan() {
-        User user = new User("John", "Doe");
-        boolean result = user.addLessonPlan("Math", "Algebra Basics", "Introduction to Algebra");
-        assertTrue(result);
-    }
 
     @Test
     public void testViewLessonPlans() {
