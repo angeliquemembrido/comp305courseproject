@@ -25,8 +25,9 @@ public class User {
         return lastName;
     }
 
+
     public List<LessonPlan> viewLessonPlans() {
-        return new ArrayList<>(lessonPlans);
+        return LessonPlan.lessonPlans;
     }
 
     public List<Teacher> getTeachers() {
@@ -56,7 +57,7 @@ public class User {
         }
 
         LessonPlan newLessonPlan = new LessonPlan(subject, title, description);
-        return lessonPlans.add(newLessonPlan);
+        return LessonPlan.lessonPlans.add(newLessonPlan);
     }
 
     public List<LessonPlan> searchBySubject(String subject) {
@@ -64,10 +65,11 @@ public class User {
             return new ArrayList<>(); // return an empty list
         }
 
-        return lessonPlans.stream()
+        return LessonPlan.lessonPlans.stream()
                 .filter(lp -> subject.equals(lp.getSubject()))
                 .collect(Collectors.toList());
     }
+
 
 
 

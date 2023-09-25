@@ -8,7 +8,7 @@ public class LessonPlan {
     private final String description;
 
     // Static list to hold all lesson plans.
-    private final static List<LessonPlan> lessonPlans = new ArrayList<>();
+    protected static List<LessonPlan> lessonPlans = new ArrayList<>();
 
     public LessonPlan(String subject, String title, String description) {
         this.subject = subject;

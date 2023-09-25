@@ -38,13 +38,15 @@ public class Main {
                     break;
                 case 2:
                     System.out.print("Enter the subject of the lesson plan to remove: ");
-                    String removeSubject = scanner.next();
+                    scanner.nextLine();  // consume the remaining newline character
+                    String removeSubject = scanner.nextLine();
                     System.out.print("Enter the title of the lesson plan to remove: ");
-                    String removeTitle = scanner.next();
+                    String removeTitle = scanner.nextLine();
                     boolean removeStatus = admin.removeLessonPlan(removeSubject, removeTitle);
                     if (removeStatus) {
                         System.out.println("Lesson Plan successfully removed.");
-                    } else {
+                    }
+                    else {
                         System.out.println("Failed to remove Lesson Plan.");
                     }
                     break;

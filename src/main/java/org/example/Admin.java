@@ -4,21 +4,19 @@ public class Admin extends User {
         super(firstName, lastName);
     }
 
-    public boolean uploadLessonPlan(String subject, String title, String description) {
-        LessonPlan newLessonPlan = new LessonPlan(subject, title, description);
-        return lessonPlans.add(newLessonPlan);
-    }
-
     public boolean removeLessonPlan(String subject, String title) {
-        for (int i = 0; i < lessonPlans.size(); i++) {
-            LessonPlan lp = lessonPlans.get(i);
+        for (int i = 0; i < LessonPlan.lessonPlans.size(); i++) {
+            LessonPlan lp = LessonPlan.lessonPlans.get(i);
+            System.out.print(lp.getSubject());
+            System.out.print(lp.getTitle());
             if (lp.getSubject().equals(subject) && lp.getTitle().equals(title)) {
-                lessonPlans.remove(i);
+                LessonPlan.lessonPlans.remove(i);
                 return true;
             }
         }
         return false;
     }
+
 
     @Override
     public boolean addTeacher(String firstName, String lastName, String subject) {

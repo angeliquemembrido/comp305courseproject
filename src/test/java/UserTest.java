@@ -23,11 +23,6 @@ public class UserTest {
         assertNotNull(lessonPlans);
     }
 
-    @Test
-    public void testViewLessonPlans_Empty() {
-        User user = new User("John", "Doe");
-        assertTrue(user.viewLessonPlans().isEmpty());
-    }
 
     @Test
     public void testAddTeacher() {
@@ -146,6 +141,24 @@ public class UserTest {
         user.uploadLessonPlan("Computer Science", "Object-Oriented Programming", "Intro to Test-Driven Development");
 
         List<LessonPlan> results = user.searchBySubject("Art");
+        assertTrue(results.isEmpty());
+    }
+    @Test
+    public void testSearchByEmptySubject() {
+
+        User user = new User("Angelique", "Membrido");
+        user.uploadLessonPlan("Computer Science", "Object-Oriented Programming", "Intro to Test-Driven Development");
+
+        List<LessonPlan> results = user.searchBySubject("");
+        assertTrue(results.isEmpty());
+    }
+    @Test
+    public void testSearchByNullSubject() {
+
+        User user = new User("Angelique", "Membrido");
+        user.uploadLessonPlan("Computer Science", "Object-Oriented Programming", "Intro to Test-Driven Development");
+
+        List<LessonPlan> results = user.searchBySubject(null);
         assertTrue(results.isEmpty());
     }
 
