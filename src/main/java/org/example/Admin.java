@@ -7,8 +7,6 @@ public class Admin extends User {
     public boolean removeLessonPlan(String subject, String title) {
         for (int i = 0; i < LessonPlan.lessonPlans.size(); i++) {
             LessonPlan lp = LessonPlan.lessonPlans.get(i);
-            System.out.print(lp.getSubject());
-            System.out.print(lp.getTitle());
             if (lp.getSubject().equals(subject) && lp.getTitle().equals(title)) {
                 LessonPlan.lessonPlans.remove(i);
                 return true;
