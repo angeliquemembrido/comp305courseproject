@@ -96,7 +96,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CourseTest">
+  <component name="RunManager" selected="Gradle.AdminTest and 5 more (2)">
     <configuration name="AdminTest and 5 more (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -124,7 +124,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AdminTest and 5 more" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AdminTest and 5 more (2)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -222,11 +222,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AdminTest and 5 more (2)" />
         <item itemvalue="Gradle.CourseTest" />
         <item itemvalue="Gradle.AdminTest" />
         <item itemvalue="Gradle.StudentTest" />
         <item itemvalue="Gradle.AdminTest and 5 more (1)" />
-        <item itemvalue="Gradle.AdminTest and 5 more" />
       </list>
     </recent_temporary>
   </component>

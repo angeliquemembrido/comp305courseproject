@@ -61,6 +61,6 @@ public class Student {
             enrolledCourses.add(course);
             return true; // Enrollment successful
         }
-        return false; // Student is already enrolled in the course
+        return false; // Student has already enrolled in course
     }
 }
