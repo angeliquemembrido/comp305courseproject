@@ -4,6 +4,8 @@ import org.example.Course;
 import org.example.Student;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 public class CourseTest {
 
     @Test
@@ -33,5 +35,21 @@ public class CourseTest {
         Student student = new Student("Angelique", "Membrido");
         assertTrue(course.enrollStudent(student));
         assertFalse(course.enrollStudent(student)); // Cannot enroll the same student twice
+    }
+
+    @Test
+    void testGetAllCourses() {
+        Course course = new Course("COMP305", "Object-Oriented Programming");
+        Course.allCourses.add(course);
+        List<Course> allCourses = Course.getAllCourses();
+        assertTrue(((List<?>) allCourses).contains(course));
+        assertNotSame(Course.allCourses, allCourses);
+    }
+
+    @Test
+    void testGetCourseCode() {
+        Course course = new Course("COMP305", "Object-Oriented Programming");
+        String courseCode = course.getCourseCode();
+        assertEquals("COMP305", courseCode);
     }
 }
