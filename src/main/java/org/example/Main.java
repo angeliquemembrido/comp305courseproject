@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         User user = new User("Angelique", "Membrido");
         Admin admin = new Admin("Jennifer", "Olsen");
+        Student student = new Student("Diego", "Torero");
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -25,6 +26,9 @@ public class Main {
                     userMenu(user, scanner);
                     break;
                 case 3:
+                    studentMenu(student, scanner); // Add a studentMenu method
+                    break;
+                case 4:
                     System.out.println("Exiting...");
                     scanner.close();
                     System.exit(0);
@@ -164,6 +168,42 @@ public class Main {
                         }
                         break;
                     }
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
+    public static void studentMenu(Student student, Scanner scanner) {
+        while (true) {
+            System.out.println("\nStudent Menu:");
+            System.out.println("1. View Enrolled Courses");
+            System.out.println("2. Enroll in a Course");
+            System.out.println("3. Back to Main Menu");
+            System.out.print("Enter your choice: ");
+            int studentChoice = scanner.nextInt();
+            scanner.nextLine(); // Handles newline
+
+            switch (studentChoice) {
+                case 1:
+                    System.out.println("Enrolled Courses:");
+                    List<Course> enrolledCourses = student.getEnrolledCourses();
+                    if (enrolledCourses.isEmpty()) {
+                        System.out.println("You are not enrolled in any courses.");
+                    } else {
+                        for (Course course : enrolledCourses) {
+                            System.out.println("Course Code: " + course.getCourseCode());
+                            System.out.println("Description: " + course.getDescription());
+                            System.out.println("-------------------------");
+                        }
+                    }
+                    break;
+                case 2:
+                    // Enroll in a Course logic
+                    break;
+                case 3:
+                    System.out.println("Returning to Main Menu.");
+                    return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
