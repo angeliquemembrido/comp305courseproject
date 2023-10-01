@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="709f3f0f-9dce-4463-9039-aa6dfcb87801" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CourseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CourseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,32 +91,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AdminTest and 3 more">
-    <configuration name="AdminTest and 3 more (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests &quot;AdminTest&quot;" />
-            <option value="--tests &quot;LessonPlanTest&quot;" />
-            <option value="--tests &quot;TeacherTest&quot;" />
-            <option value="--tests &quot;UserTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.CourseTest">
     <configuration name="AdminTest and 3 more (2)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -166,7 +142,34 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AdminTest and 5 more" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests &quot;AdminTest&quot;" />
+            <option value="--tests &quot;CourseTest&quot;" />
+            <option value="--tests &quot;LessonPlanTest&quot;" />
+            <option value="--tests &quot;StudentTest&quot;" />
+            <option value="--tests &quot;TeacherTest&quot;" />
+            <option value="--tests &quot;UserTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CourseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -179,7 +182,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;UserTest&quot;" />
+            <option value="&quot;CourseTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -214,11 +217,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CourseTest" />
+        <item itemvalue="Gradle.AdminTest and 5 more" />
         <item itemvalue="Gradle.AdminTest and 3 more" />
         <item itemvalue="Gradle.AdminTest and 3 more (2)" />
         <item itemvalue="Gradle.UserTest.testSearchBySubject" />
-        <item itemvalue="Gradle.AdminTest and 3 more (1)" />
-        <item itemvalue="Gradle.UserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -250,6 +253,7 @@
     <SUITE FILE_PATH="coverage/TeacherNetworkingSystem$AdminTest.ic" NAME="AdminTest Coverage Results" MODIFIED="1695069612306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TeacherNetworkingSystem$LessonPlanTest.ic" NAME="LessonPlanTest Coverage Results" MODIFIED="1695070053087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TeacherNetworkingSystem$TeacherTest.ic" NAME="TeacherTest Coverage Results" MODIFIED="1695069623359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TeacherNetworkingSystem$AdminTest_and_5_more.ic" NAME="AdminTest and 5 more Coverage Results" MODIFIED="1696187063029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TeacherNetworkingSystem$UserTest.ic" NAME="UserTest Coverage Results" MODIFIED="1695070158876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TeacherNetworkingSystem$AdminTest_and_3_more__2_.ic" NAME="AdminTest and 3 more (2) Coverage Results" MODIFIED="1695613788889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>

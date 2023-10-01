@@ -7,9 +7,15 @@ import org.junit.jupiter.api.Test;
 public class CourseTest {
 
     @Test
+    public void testGetDescription() {
+        Course course = new Course("COMP 305", "Object-Oriented Programming");
+        String description = course.getDescription();
+        assertEquals("Object-Oriented Programming", description);
+    }
+    @Test
     public void testCourseCreation() {
         Course course = new Course("COMP 305", "Object-Oriented Programming");
-        assertEquals("Math 101", course.getCourseCode());
+        assertEquals("COMP 305", course.getCourseCode());
         assertEquals("Object-Oriented Programming", course.getDescription());
     }
 

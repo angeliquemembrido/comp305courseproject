@@ -27,10 +27,13 @@ public class Course {
         return new ArrayList<>(enrolledStudents);
     }
 
-    // Method to enroll a student
 
     public boolean enrollStudent(Student student) {
-        // Implement logic to enroll a student
-        return enrolledStudents.add(student);
+        if (!enrolledStudents.contains(student)) {
+            // Student is not already enrolled, so add student
+            return enrolledStudents.add(student);
+        }
+        // Student is already enrolled, return false to indicate that enrollment failed
+        return false;
     }
 }
