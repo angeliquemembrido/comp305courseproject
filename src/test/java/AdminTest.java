@@ -1,4 +1,5 @@
 import org.example.Admin;
+import org.example.Course;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
@@ -65,6 +66,14 @@ public class AdminTest {
         admin.uploadLessonPlan("Computer Science", "OOP", "Intro to OOP");
         assertTrue(admin.removeLessonPlan("Computer Science", "OOP"));
         assertFalse(admin.removeLessonPlan("Computer Science", "OOP"));
+    }
+
+    @Test
+    public void testAddCourse() {
+        Admin admin = new Admin("Angelique", "Membrido");
+        Course course = new Course("COMP110", "Introduction to Computer Science");
+        boolean added = admin.addCourse(course);
+        assertTrue(added);
     }
 
 }

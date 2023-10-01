@@ -1,8 +1,17 @@
 package org.example;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.example.Course.allCourses;
+
 public class Admin extends User {
+    public List<Course> courses;
     public Admin(String firstName, String lastName) {
         super(firstName, lastName);
+        this.courses = new ArrayList<>();
     }
+
 
     public boolean removeLessonPlan(String subject, String title) {
         for (int i = 0; i < LessonPlan.lessonPlans.size(); i++) {
@@ -41,6 +50,14 @@ public class Admin extends User {
         }
         return false;
     }
+
+    public boolean addCourse(Course course) {
+        if (course != null && course.getCourseCode() != null && course.getDescription() != null) {
+            return allCourses.add(course);
+        }
+        return false;
+    }
+
 }
 
 

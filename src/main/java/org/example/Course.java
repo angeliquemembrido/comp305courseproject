@@ -8,6 +8,9 @@ public class Course {
     private String description;
     private List<Student> enrolledStudents;
 
+    public static List<Course> allCourses = new ArrayList<>();
+
+
 
     public Course(String courseCode, String description) {
         this.courseCode = courseCode;
@@ -23,10 +26,14 @@ public class Course {
         return description;
     }
 
+
     public List<Student> getEnrolledStudents() {
         return new ArrayList<>(enrolledStudents);
     }
 
+    public static List<Course> getAllCourses() {
+        return new ArrayList<>(allCourses);
+    }
 
     public boolean enrollStudent(Student student) {
         if (!enrolledStudents.contains(student)) {
